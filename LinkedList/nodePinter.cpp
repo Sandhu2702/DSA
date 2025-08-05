@@ -9,6 +9,13 @@ class Node{
         this->next=NULL;
     };
 };
+void display(Node* head){
+    Node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->value<<" ";
+        temp=temp->next;
+    }
+}
 int main(){
     Node* a=new Node(10);
     Node* b=new Node(5);
@@ -19,11 +26,6 @@ int main(){
     b->next=c;
     c->next=d;
     d->next=e;
-    Node* temp=a;
-    while(temp!=NULL){
-        cout<<temp->value<<"\n";
-        temp=temp->next;
-    }
-    cout<<a->next->next->value<<"\n";
+    display(a);
 
 }
