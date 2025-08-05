@@ -19,11 +19,11 @@ int main(){
     b.next=&c;
     c.next=&d;
     d.next=&e;
-    // cout<<((a.next)->value)<<"\n";
-    // (a.next)->value=100;
-    // cout<<(((a.next)->next)->value)<<"\n";
-    // cout<<((((a.next)->next)->next)->value)<<"\n";
-    // cout<<(((((a.next)->next)->next)->next)->value)<<"\n";
+    cout<<((a.next)->value)<<"\n";
+    (a.next)->value=100;
+    cout<<(((a.next)->next)->value)<<"\n";
+    cout<<((((a.next)->next)->next)->value)<<"\n";
+    cout<<(((((a.next)->next)->next)->next)->value)<<"\n";
     Node temp=a;
     while (1){
         cout<<temp.value<<"\n";

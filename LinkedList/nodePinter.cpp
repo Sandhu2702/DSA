@@ -24,5 +24,6 @@ int main(){
         cout<<temp->value<<"\n";
         temp=temp->next;
     }
+    cout<<a->next->next->value<<"\n";
 
 }
