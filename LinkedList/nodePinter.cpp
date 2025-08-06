@@ -9,6 +9,11 @@ class Node{
         this->next=NULL;
     };
 };
+void displayRec(Node*head){
+        if(head==NULL) return;
+        cout<<head->value<<" ";
+        displayRec(head->next);
+}
 void display(Node* head){
     Node* temp=head;
     while(temp!=NULL){
@@ -27,5 +32,7 @@ int main(){
     c->next=d;
     d->next=e;
     display(a);
+    cout<<"\n";
+    displayRec(a);
 
 }
