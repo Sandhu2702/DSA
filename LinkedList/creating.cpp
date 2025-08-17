@@ -9,6 +9,11 @@ class Node{
         this->next=NULL;
     };
 };
+void displayRecReverse(Node* head){
+    if(head==NULL) return;
+    displayRecReverse(head->next);
+    cout<<head->value<<" ";
+}
 int main(){
     Node a(10);
     Node b(5);
@@ -30,6 +35,8 @@ int main(){
         if(temp.next==NULL) break;
         temp=*(temp.next);
     }
+    cout<<"Reverse display:\n";
+    displayRecReverse(&a);
 
 
 
