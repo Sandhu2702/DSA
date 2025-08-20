@@ -25,8 +25,11 @@ int main(){
         temp.push(st.top());
         st.pop();
     }
+    cout<<endl;
+    cout<<"Stack elements in inserted order: ";
     //putting elements back from temp tp st
     while(temp.size()>0){
+        cout<<temp.top()<<" ";
         st.push(temp.top());
         temp.pop();
     }
