@@ -10,6 +10,15 @@ void displayRec(stack<int> &st){
         st.push(x);
     }
 }
+void displayRecReverse(stack<int> &st){
+    if(!st.empty()){
+        int x=st.top();
+        st.pop();
+        displayRecReverse(st);
+        cout<<x<<" ";
+        st.push(x);
+    }
+}
 int main(){
     stack<int> st;
     st.push(10);
@@ -18,4 +27,6 @@ int main(){
     st.push(40);
     st.push(50);
     displayRec(st);
+    cout<<endl;
+    displayRecReverse(st);
 }
