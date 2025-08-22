@@ -17,16 +17,15 @@ void pushAtBottom(stack<int> &st, int x){
         temp.pop();
     }
 }
-void pushAtBottom(stack<int> &st, int val){
+void pushAtBottomRec(stack<int> &st, int val){
     if(st.empty()){
         st.push(val);
         return;
-        int x=st.top();
-        st.pop();
-        pushAtBottom(st,x);
-        st.push(x);
-
     }
+    int x=st.top();
+    st.pop();
+    pushAtBottom(st,val);
+    st.push(x);
 }
 void print(stack<int> st){
     stack<int>temp;
@@ -54,7 +53,7 @@ int main(){
     print(st);
     cout<<endl;
     //pushAtBottom(st,70);
-    pushAtBottom(st,70);
-    cout<<"Stack size after pushinh 70 at bottom: "<<st.size()<<endl;
+    pushAtBottomRec(st,90);
+    cout<<"Stack size after pushing 70 at bottom: "<<st.size()<<endl;
     print(st);
 }
