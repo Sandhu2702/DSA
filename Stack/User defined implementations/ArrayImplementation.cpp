@@ -32,6 +32,11 @@ public:
     int size(){
         return idx+1;
     }
+    void display(){
+        for(int i=0;i<=idx;i++){
+            cout<<arr[i]<<" ";
+        }
+    }
 
 
 };
@@ -50,4 +55,5 @@ int main(){
     st.pop();
     cout<<st.size()<<endl;
     cout<<st.top()<<endl;
+    st.display();
 }
