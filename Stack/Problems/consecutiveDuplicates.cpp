@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stack>
+#include <algorithm>
 using namespace std;
 void removeConsecutiveDuplicates(string s){
     stack<char> st;
@@ -8,12 +9,12 @@ void removeConsecutiveDuplicates(string s){
             st.push(s[i]);
         }
     }
-    string result="";
+    s="";
     while(!st.empty()){
-        result=st.top()+result;
+        s=st.top()+s;
         st.pop();
     }
-    cout<<result<<endl;
+    cout<<s<<endl;
 }
 int main(){
     string s="aaabbcddaabffg";
