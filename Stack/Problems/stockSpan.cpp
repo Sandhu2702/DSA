@@ -18,7 +18,7 @@ int main(){
         }else{
             pge[i]=st.top();
         }
-        //push the arr[i] in stack
+        //push the i in stack
         st.push(i);
     }
     for(int i=0;i<n;i++){
