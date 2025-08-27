@@ -10,7 +10,7 @@ string solve(string val1,string val2, char ch){
 
 }
 int main(){
-    string s="79+4*8/3-";
+    string s="12+3*4-";
     stack<string> val;
     for(int i=0;i<s.length();i++){
         if(s[i]>=48 && s[i]<=57){

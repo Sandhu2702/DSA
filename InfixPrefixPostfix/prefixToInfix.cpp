@@ -9,7 +9,7 @@ string solve(string val1,string val2, char ch){
    return s;
 }
 int main(){
-    string s="-/*+79483";
+    string s="*+3-54/62";
     stack<string> val;
     for(int i=s.length()-1;i>=0;i--){
         if(s[i]>=48 && s[i]<=57){
@@ -25,6 +25,5 @@ int main(){
         }
     }
     cout<<"Answer:"<<val.top()<<endl;
-    cout<<"Expected:"<<"(7+9)*4/8-3"<<endl;
 
-}
+}    
