@@ -1,6 +1,16 @@
 #include<iostream>
 #include<queue>
 using namespace std;
+void display(queue<int>& q){
+    int n=q.size();
+    for(int i=0;i<n;i++){
+        cout<<q.front()<<" ";
+        int x=q.front();
+        q.pop();
+        q.push(x);
+    }
+    cout<<endl;
+}
 int main(){
     queue<int> q;
     q.push(10);
@@ -11,7 +21,7 @@ int main(){
     cout<<"Front element:"<<q.front()<<endl;
     cout<<"Back element:"<<q.back()<<endl;
     cout<<"size of queue: "<<q.size()<<endl;
+    display(q);
     q.pop();
-    cout<<"Now front element:"<<q.front()<<endl;
-    cout<<"size of queue: "<<q.size()<<endl;
+    display(q);
 }
