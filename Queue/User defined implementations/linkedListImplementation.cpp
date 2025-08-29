@@ -34,8 +34,10 @@ class Queue{
             cout<<"List is empty"<<endl;
             return;
         }
+        Node* temp=head;
         head=head->next;
         s--;
+        delete temp;// free the memory
     }
     int front(){
         if(s==0){
