@@ -19,7 +19,10 @@ int levels(Node* root){
 }
 void elementsNthLevel(Node* root,int current, int level){
     if(root==NULL) return;
-    if(current==level) cout<<root->val<<" ";
+    if(current==level){
+         cout<<root->val<<" ";
+         return;
+    }
     elementsNthLevel(root->left,current+1,level);
     elementsNthLevel(root->right,current+1,level);
 }
