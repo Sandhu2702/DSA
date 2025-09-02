@@ -11,11 +11,11 @@ class Node{
         this->right=NULL;
     }
 };
-void display(Node* root){
+void preorder(Node* root){
     if(root==NULL) return;
     cout<<root->val<<" ";
-    display(root->left);
-    display(root->right);
+    preorder(root->left);
+    preorder(root->right);
 }
 int main(){
     Node* a=new Node(1);
@@ -31,5 +31,5 @@ int main(){
     b->right=e;
     c->left=f;
     c->right=g;
-    display(a);
+    preorder(a);
 }
