@@ -1,7 +1,6 @@
 #include<iostream>
 #include<stack>
 #include<vector>
-#include<algorithm>
 using namespace std;
 class Node{
     public:
@@ -14,19 +13,23 @@ class Node{
         this->right=NULL;
     }
 };
-vector<int> postorder(Node* root,vector<int>& ans){
-    stack<Node*> st;
-    if(root!=NULL) st.push(root);
-    while(st.size()>0){
-        Node* temp=st.top();
-        st.pop();
-        ans.push_back(temp->val);
-        if(temp->left) st.push(temp->left);
-        if(temp->right) st.push(temp->right);
-    }
+vector<int> inorder(Node* root,vector<int>&ans){
+        stack<Node*> st;
+        Node* node= root;
+        while(st.size()>0 || node){
+            if(node){
+                st.push(node);
+                node=node->left;
+            }
+            else{
+                Node* temp=st.top();
+                st.pop();
+                ans.push_back(temp->val);
+                node=temp->right;
+            }
+        }
     return ans;
 }
-
 int main(){
     Node* a=new Node(1);
     Node* b=new Node(2);
@@ -42,12 +45,9 @@ int main(){
     c->left=f;
     c->right=g;
     vector<int> ans;
-    postorder(a,ans);
-    cout<<endl;
-    reverse(ans.begin(),ans.end());
+    inorder(a,ans);
     for(int i=0;i<ans.size();i++){
         cout<<ans[i]<<" ";
     }
     cout<<endl;
-    
 }

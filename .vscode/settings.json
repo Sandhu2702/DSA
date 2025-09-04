@@ -3,6 +3,7 @@
         "MLTable": "yaml",
         "iostream": "cpp",
         "random": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "vector": "cpp"
     }
 }
