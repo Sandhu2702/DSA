@@ -52,5 +52,6 @@ int main(){
     bool result=isValidBST(a);
     if(result==1) cout<<"true";
     else cout<<"false";
+    cout<<endl;
     
 }
