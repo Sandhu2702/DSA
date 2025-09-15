@@ -22,12 +22,7 @@ void morrisTraversal(Node* root){
     Node* pred;
     Node* curr=root;
     while(curr!=NULL){
-        if(curr->left==NULL){
-            //case1 no child
-            cout<<curr->val<<" ";
-            curr=curr->right;
-        }
-        else{//find pred
+        if(curr->left!=NULL){//find pred
             pred=curr->left;
             while(pred->right!=NULL && pred->right!=curr){
                 pred=pred->right;
@@ -36,13 +31,17 @@ void morrisTraversal(Node* root){
                 pred->right=curr;
                 curr=curr->left;
             }
-            else if(pred->right==curr){//unlink 
+            if(pred->right==curr){//unlink 
                 pred->right=NULL;
                 cout<<curr->val<<" ";
                 curr=curr->right;          
             }
-
         }
+        else{
+                //case1 no child
+            cout<<curr->val<<" ";
+            curr=curr->right;
+            }
     }
 }
 int main(){
