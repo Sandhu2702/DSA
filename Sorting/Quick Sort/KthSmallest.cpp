@@ -25,23 +25,19 @@ int partition(int arr[], int si, int ei){
     }
     return pivotIdx;
 }
-void quickSort(int arr[], int si, int ei){//si-starting index and ei-ending index
-    if(si>=ei) return;
-    //5,1,8,2,7,6,3,4
+int kthSmallest(int arr[], int si, int ei,int k){//si-starting index and ei-ending index
     int pi=partition(arr,si,ei);// pi-pivot index
-    //4,1,3,2,5,7,8,6
-    quickSort(arr,si,pi-1);
-    quickSort(arr,pi+1,ei);
+    if((pi+1)==k) return arr[pi];
+    else if((pi+1)<k) return kthSmallest(arr,pi+1,ei,k);
+    else return kthSmallest(arr,si,pi-1,k);
 }
 int main(){
-    int arr[]={5,1,8,2,7,6,3,4};
+    int arr[]={5,18,82,20,7,6,31,4,-8};
     int n=sizeof(arr)/sizeof(arr[0]);
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
-    quickSort(arr,0,n-1);
     cout<<endl;
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
+    int k=4;
+    cout<<kthSmallest(arr,0,n-1,k);
 }
