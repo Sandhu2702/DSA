@@ -6,13 +6,10 @@ int main(){
     pq.push(10);
     pq.push(2);
     pq.push(-6);
-    pq.push(80);
-    pq.push(40);
-    pq.push(30);
-    pq.push(0);
-    cout<<pq.top();
+    pq.push(87);
+    pq.push(50);
+    cout<<pq.top()<<endl;
     pq.pop();
-    cout<<endl;
     cout<<pq.top();
-}
 
+}
