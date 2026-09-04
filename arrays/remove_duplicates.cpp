@@ -24,7 +24,6 @@ int main(){
     // }
 
     //second approach--------------two_pointer
-    sort(a.begin(),a.end());
     int i=0;
     for(int j=1;j<a.size();j++){
         if(a[j]!=a[i]){
