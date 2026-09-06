@@ -28,7 +28,7 @@ int main(){
     //     cout<<ans[i]<<" ";
     // }
 
-    // second approach ----two pointer 
+    // second approach ----two pointer O(n1+n2) time complexity
     int i=0;
     int j=0;
     vector<int>ans;
