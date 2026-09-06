@@ -44,7 +44,7 @@ int fibo(int n){
         prev2=prev;
         prev=curr;
     }
-    return curr;
+    return prev;
 }
 
 int main(){
