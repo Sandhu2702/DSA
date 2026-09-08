@@ -49,13 +49,18 @@ int main(){
     int n = a.size();
     vector<int>dp(n+1,-1);
     dp[0]=0;
+    int prev=0;
+    int prev2=0;
+    int curi=0;
     for(int i=1;i<n;i++){
-        int fs= dp[i-1]+abs(a[i]-a[i-1]);
+        int fs= prev+abs(a[i]-a[i-1]);
         int ss=INT_MAX;
         if(i>1){
-            ss=dp[i-2]+abs(a[i]-a[i-2]);
+            ss=prev2+abs(a[i]-a[i-2]);
         }
-        dp[i]=min(fs,ss);
+        curi=min(fs,ss);
+        prev2=prev;
+        prev=curi;
     }
-    cout << dp[n-1];
+    cout << prev;
 }
