@@ -4,20 +4,58 @@
 #include<climits>
 using namespace std;
 
-int f(int idx,vector<int>&a){
-    if(idx==0) return 0;
-    int left = f(idx-1,a)+abs(a[idx]-a[idx-1]);
-    int right=INT_MAX ;
-    if(idx>1){
-        right = f(idx-2,a)+abs(a[idx]-a[idx-2]);
-    }
-    return min(left,right);
+// int f(int idx,vector<int>&a){
+//     if(idx==0) return 0;
+//     int left = f(idx-1,a)+abs(a[idx]-a[idx-1]);
+//     int right=INT_MAX ;
+//     if(idx>1){
+//         right = f(idx-2,a)+abs(a[idx]-a[idx-2]);
+//     }
+//     return min(left,right);
 
-}
+// }
 
+// int main(){
+//     vector<int> a = {10, 20, 30, 10};
+//     int n = a.size();
+
+//     cout << f(n - 1, a);
+// }
+
+//Memoization
+// int f(int idx,vector<int>&a, vector<int>&dp){
+//     if(idx==0) return 0;
+//     if(dp[idx]!=-1) return dp[idx];
+//     int left = f(idx-1,a,dp)+abs(a[idx]-a[idx-1]);
+//     int right=INT_MAX ;
+//     if(idx>1){
+//         right = f(idx-2,a,dp)+abs(a[idx]-a[idx-2]);
+//     }
+//     return dp[idx]=min(left,right);
+
+// }
+
+// int main(){
+//     vector<int> a = {10, 20, 30, 10};
+//     int n = a.size();
+
+//     vector<int>dp(n+1,-1);
+//     cout << f(n - 1, a,dp);
+// }
+
+//Tabulation
 int main(){
     vector<int> a = {10, 20, 30, 10};
     int n = a.size();
-
-    cout << f(n - 1, a);
+    vector<int>dp(n+1,-1);
+    dp[0]=0;
+    for(int i=1;i<n;i++){
+        int fs= dp[i-1]+abs(a[i]-a[i-1]);
+        int ss=INT_MAX;
+        if(i>1){
+            ss=dp[i-2]+abs(a[i]-a[i-2]);
+        }
+        dp[i]=min(fs,ss);
+    }
+    cout << dp[n-1];
 }
